@@ -1,0 +1,90 @@
+{
+	"events": [
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Dengan cerdik, Baba Budan meletakkan biji-biji kopi tersebut di dalam lipatan pakaiannya, tepat di bagian perut. Akhirnya, Baba Budan pun berhasil melewati pelabuhan Yaman tanpa ada seorang pun yang tahu bahwa dia sudah membawa biji-biji kopi fertil.\n\nSesampainya di India, Baba Budan segera menanam biji-biji kopi tersebut di sebuah bukit di daerah Chikkamagaluru, Karnataka, wilayah barat daya India. Hingga kini, oleh masyarakat India, bukit itu dikenal dengan nama Bukit Baba Budan.\n\nSejak kopi menjadi komoditas berharga, warga India pun mulai menggemari kebiasaan minum kopi. Kedai kopi pertama di India adalah Kafe Udupi di Bombay yang berdiri pada tahun 1936. \n\nBeberapa tahun kemudian, seiring dengan semakin berkembangnya industri, perdagangan, dan seni budaya di negara tersebut, kedai-kedai kopi pun semakin banyak bermunculan.\n\nBerkat jasa Baba Budan, kini kita bisa dengan mudah menemukan beragam jenis kopi dari berbagai belahan bumi. Keberanian Baba Budan membawa tujuh biji kopi fertil menjadi awal mula kopi menyebar ke seluruh dunia\n\nSumber: https://www.gordi.id/blogs/updates/baba-budan-penyebar-benih-kopi-di-dunia"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 1,
+			"animation_wait": false,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Terima kasih telah bermain game ini!\n~Air Minum"
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Game Programmed, art, and music by Fathi Naufal Hanif\nMade with Godot Engine"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1652105473.json",
+		"name": "credits or smthn"
+	}
+}

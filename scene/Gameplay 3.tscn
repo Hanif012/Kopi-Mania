@@ -1,0 +1,585 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/tile.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/sounds/chat.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/Parallax/cloud.PNG" type="Texture" id=5]
+[ext_resource path="res://scene/door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/Baba budan test.gd" type="Script" id=7]
+[ext_resource path="res://assets/Character/Baba Budan.PNG" type="Texture" id=8]
+[ext_resource path="res://assets/Fonts/alagard.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://scripts/cloud.gd" type="Script" id=10]
+[ext_resource path="res://assets/Random idk/asap.png" type="Texture" id=11]
+[ext_resource path="res://scene/Gameplay 4.tscn" type="PackedScene" id=12]
+[ext_resource path="res://tv mode.tres" type="Material" id=13]
+[ext_resource path="res://scene/Pause menu.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode depth_draw_alpha_prepass, cull_front, specular_schlick_ggx, depth_test_disable, ensure_correct_normals, shadows_disabled, ambient_light_disabled;
+
+uniform sampler2D tex_frg_32;
+uniform sampler2D tex_frg_3;
+uniform vec4 MainColor : hint_color;
+uniform vec4 BackColor1 : hint_color;
+uniform vec4 BackColor2 : hint_color;
+uniform float Brightness;
+
+
+
+void vertex() {
+// Input:8
+	float n_out8p0 = TIME;
+
+// Input:2
+	vec3 n_out2p0 = VERTEX;
+
+// VectorDecompose:3
+	float n_out3p0 = n_out2p0.x;
+	float n_out3p1 = n_out2p0.y;
+	float n_out3p2 = n_out2p0.z;
+
+// ScalarOp:7
+	float n_out7p0 = n_out8p0 + n_out3p1;
+
+// ScalarOp:14
+	float n_in14p1 = 3.00000;
+	float n_out14p0 = n_out7p0 * n_in14p1;
+
+// ScalarFunc:5
+	float n_out5p0 = sin(n_out14p0);
+
+// ScalarOp:13
+	float n_in13p1 = 0.10000;
+	float n_out13p0 = n_out5p0 * n_in13p1;
+
+// ScalarOp:6
+	float n_out6p0 = n_out13p0 + n_out3p0;
+
+// ScalarOp:9
+	float n_out9p0 = n_out8p0 + n_out3p0;
+
+// ScalarOp:15
+	float n_in15p1 = 1.00000;
+	float n_out15p0 = n_out9p0 * n_in15p1;
+
+// ScalarFunc:11
+	float n_out11p0 = cos(n_out15p0);
+
+// ScalarOp:12
+	float n_in12p1 = 0.20000;
+	float n_out12p0 = n_out11p0 * n_in12p1;
+
+// ScalarOp:10
+	float n_out10p0 = n_out12p0 + n_out3p2;
+
+// VectorCompose:4
+	vec3 n_out4p0 = vec3(n_out6p0, n_out3p1, n_out10p0);
+
+// Output:0
+	VERTEX = n_out4p0;
+
+}
+
+void fragment() {
+// Input:2
+	vec3 n_out2p0 = vec3(UV, 0.0);
+
+// VectorDecompose:9
+	float n_out9p0 = n_out2p0.x;
+	float n_out9p1 = n_out2p0.y;
+	float n_out9p2 = n_out2p0.z;
+
+// ScalarSmoothStep:20
+	float n_in20p0 = 0.00000;
+	float n_in20p1 = 0.20000;
+	float n_out20p0 = smoothstep(n_in20p0, n_in20p1, n_out9p1);
+
+// Input:34
+	float n_out34p0 = TIME;
+
+// ScalarOp:35
+	float n_in35p1 = -0.20000;
+	float n_out35p0 = n_out34p0 * n_in35p1;
+
+// ScalarOp:36
+	float n_in36p1 = -0.30000;
+	float n_out36p0 = n_out34p0 * n_in36p1;
+
+// VectorCompose:37
+	float n_in37p2 = 0.00000;
+	vec3 n_out37p0 = vec3(n_out35p0, n_out36p0, n_in37p2);
+
+// VectorOp:38
+	vec3 n_out38p0 = n_out37p0 + n_out2p0;
+
+// VectorOp:53
+	vec3 n_in53p1 = vec3(1.00000, 4.00000, 1.00000);
+	vec3 n_out53p0 = n_out38p0 * n_in53p1;
+
+// Texture:32
+	vec4 tex_frg_32_read = texture(tex_frg_32, n_out53p0.xy);
+	vec3 n_out32p0 = tex_frg_32_read.rgb;
+	float n_out32p1 = tex_frg_32_read.a;
+
+// ScalarOp:54
+	float n_out54p0 = n_out20p0 - dot(n_out32p0, vec3(0.333333, 0.333333, 0.333333));
+
+// ScalarOp:56
+	float n_out56p0 = n_out54p0 + n_out9p1;
+
+// ScalarClamp:52
+	float n_in52p1 = 0.00000;
+	float n_in52p2 = 1.00000;
+	float n_out52p0 = clamp(n_out56p0, n_in52p1, n_in52p2);
+
+// Input:60
+	vec3 n_out60p0 = vec3(SCREEN_UV, 0.0);
+
+// Input:6
+	float n_out6p0 = TIME;
+
+// ScalarOp:7
+	float n_in7p1 = 0.10000;
+	float n_out7p0 = n_out6p0 * n_in7p1;
+
+// ScalarOp:8
+	float n_in8p1 = -0.20000;
+	float n_out8p0 = n_out6p0 * n_in8p1;
+
+// VectorCompose:5
+	float n_in5p2 = 0.00000;
+	vec3 n_out5p0 = vec3(n_out7p0, n_out8p0, n_in5p2);
+
+// VectorOp:4
+	vec3 n_out4p0 = n_out5p0 + n_out2p0;
+
+// Texture:3
+	vec4 tex_frg_3_read = texture(tex_frg_3, n_out4p0.xy);
+	vec3 n_out3p0 = tex_frg_3_read.rgb;
+	float n_out3p1 = tex_frg_3_read.a;
+
+// VectorOp:33
+	vec3 n_out33p0 = n_out32p0 * n_out3p0;
+
+// ScalarSmoothStep:70
+	float n_in70p0 = 0.20000;
+	float n_in70p1 = 0.80000;
+	float n_out70p0 = smoothstep(n_in70p0, n_in70p1, n_out9p1);
+
+// VectorOp:66
+	vec3 n_out66p0 = n_out33p0 * vec3(n_out70p0);
+
+// VectorOp:65
+	vec3 n_out65p0 = n_out60p0 + n_out66p0;
+
+// Input:61
+	vec3 n_out61p0 = NORMAL;
+
+// Fresnel:62
+	float n_in62p3 = 1.00000;
+	float n_out62p0 = pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_in62p3);
+
+// VectorScalarMix:63
+	vec3 n_out63p0 = mix(n_out65p0, n_out61p0, n_out62p0);
+
+// Input:58
+
+// Texture:59
+	vec3 n_out59p0;
+	float n_out59p1;
+	{
+		vec4 SCREEN_TEXTURE_tex_read = texture(SCREEN_TEXTURE, n_out63p0.xy);
+		n_out59p0 = SCREEN_TEXTURE_tex_read.rgb;
+		n_out59p1 = SCREEN_TEXTURE_tex_read.a;
+	}
+
+// ColorUniform:80
+	vec3 n_out80p0 = MainColor.rgb;
+	float n_out80p1 = MainColor.a;
+
+// ColorUniform:78
+	vec3 n_out78p0 = BackColor1.rgb;
+	float n_out78p1 = BackColor1.a;
+
+// ColorUniform:79
+	vec3 n_out79p0 = BackColor2.rgb;
+	float n_out79p1 = BackColor2.a;
+
+// Input:72
+	float n_out72p0 = TIME;
+
+// ScalarFunc:71
+	float n_out71p0 = sin(n_out72p0);
+
+// ScalarOp:74
+	float n_in74p1 = 1.00000;
+	float n_out74p0 = n_out71p0 + n_in74p1;
+
+// ScalarOp:75
+	float n_in75p1 = 2.00000;
+	float n_out75p0 = n_out74p0 / n_in75p1;
+
+// VectorScalarMix:73
+	vec3 n_out73p0 = mix(n_out78p0, n_out79p0, n_out75p0);
+
+// VectorScalarMix:49
+	vec3 n_out49p0 = mix(n_out80p0, n_out73p0, n_out9p1);
+
+// ScalarSmoothStep:46
+	float n_in46p0 = 1.00000;
+	float n_in46p1 = 0.00000;
+	float n_out46p0 = smoothstep(n_in46p0, n_in46p1, n_out9p1);
+
+// VectorScalarMix:27
+	vec3 n_in27p1 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_out27p0 = mix(n_out49p0, n_in27p1, n_out46p0);
+
+// Color:69
+	vec3 n_out69p0 = vec3(0.025314, 0.034936, 0.137276);
+	float n_out69p1 = 1.000000;
+
+// ScalarOp:67
+	float n_out67p0 = dot(n_out33p0, vec3(0.333333, 0.333333, 0.333333)) * n_out46p0;
+
+// VectorScalarMix:68
+	vec3 n_out68p0 = mix(n_out27p0, n_out69p0, n_out67p0);
+
+// ScalarUniform:77
+	float n_out77p0 = Brightness;
+
+// VectorOp:51
+	vec3 n_out51p0 = n_out68p0 * vec3(n_out77p0);
+
+// VectorScalarMix:64
+	vec3 n_out64p0 = mix(n_out59p0, n_out51p0, n_out62p0);
+
+// Output:0
+	ALPHA = n_out52p0;
+	EMISSION = n_out64p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 1 )
+shader_param/MainColor = null
+shader_param/BackColor1 = null
+shader_param/BackColor2 = null
+shader_param/Brightness = null
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+trail_size_modifier = SubResource( 10 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 104.1
+flatness = 0.15
+gravity = Vector3( 0, -9, 0 )
+initial_velocity = 10.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="DynamicFont" id=6]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Activated"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.04 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -0.400003 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.04 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -0.400003 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "protal"
+
+[node name="menu" type="CanvasLayer"]
+follow_viewport_enable = true
+
+[node name="background" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+z_index = 1
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 589815, 3, 0, 655347, 3, 0, 655348, 3, 0, 655349, 3, 0, 655350, 3, 0, 655351, 3, 0, 655352, 3, 0, 655353, 3, 0, 655354, 3, 0, 655355, 3, 0, 655356, 3, 0, 655357, 3, 0, 655358, 3, 0, 655359, 3, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 720887, 3, 0, 655366, 3, 0, 786423, 3, 0, 720902, 3, 0, 851959, 3, 0, 786438, 3, 0, 917495, 3, 0, 851974, 3, 0, 983031, 3, 0, 917510, 3, 0, 1048567, 3, 0, 983046, 3, 0, 1114103, 3, 0, 1048582, 3, 0, 1179639, 3, 0, 1114118, 3, 0, 1245175, 3, 0, 1179654, 3, 0, 1310711, 3, 0, 1245190, 3, 0, 1376247, 0, 1, 1376248, 0, 2, 1376249, 0, 2, 1376250, 0, 2, 1376251, 0, 2, 1376252, 0, 2, 1376253, 0, 2, 1376254, 0, 2, 1376255, 0, 2, 1310720, 0, 2, 1310721, 0, 2, 1310722, 0, 2, 1310723, 0, 2, 1310724, 0, 2, 1310725, 0, 2, 1310726, 0, 2, 1310727, 0, 2, 1310728, 0, 2, 1310729, 0, 2, 1310730, 0, 2, 1310731, 0, 2, 1310732, 0, 2, 1310733, 0, 2, 1310734, 0, 2, 1310735, 0, 3, 1441782, 0, 1, 1441783, 0, 65538, 1441784, 0, 65538, 1441785, 0, 65538, 1441786, 0, 65538, 1441787, 0, 65538, 1441788, 0, 65538, 1441789, 0, 65538, 1441790, 0, 65538, 1441791, 0, 65538, 1376256, 0, 65538, 1376257, 0, 65538, 1376258, 0, 65538, 1376259, 0, 65538, 1376260, 0, 65538, 1376261, 0, 65538, 1376262, 0, 65538, 1376263, 0, 65538, 1376264, 0, 65538, 1376265, 0, 65538, 1376266, 0, 65538, 1376267, 0, 65538, 1376268, 0, 65538, 1376269, 0, 65538, 1376270, 0, 65538, 1376271, 0, 65538, 1376272, 0, 3, 1507317, 0, 1, 1507318, 0, 65538, 1507319, 0, 65538, 1507320, 0, 65538, 1507321, 0, 65538, 1507322, 0, 65538, 1507323, 0, 65538, 1507324, 0, 65538, 1507325, 0, 65538, 1507326, 0, 65538, 1507327, 0, 65538, 1441792, 0, 65538, 1441793, 0, 65538, 1441794, 0, 65538, 1441795, 0, 65538, 1441796, 0, 65538, 1441797, 0, 65538, 1441798, 0, 65538, 1441799, 0, 65538, 1441800, 0, 65538, 1441801, 0, 65538, 1441802, 0, 65538, 1441803, 0, 65538, 1441804, 0, 65538, 1441805, 0, 65538, 1441806, 0, 65538, 1441807, 0, 65538, 1441808, 0, 65538, 1441809, 0, 3, 1572852, 0, 1, 1572853, 0, 65538, 1572854, 0, 65538, 1572855, 0, 65538, 1572856, 0, 65538, 1572857, 0, 65538, 1572858, 0, 65538, 1572859, 0, 65538, 1572860, 0, 65538, 1572861, 0, 65538, 1572862, 0, 65538, 1572863, 0, 65538, 1507328, 0, 65538, 1507329, 0, 65538, 1507330, 0, 65538, 1507331, 0, 65538, 1507332, 0, 65538, 1507333, 0, 65538, 1507334, 0, 65538, 1507335, 0, 65538, 1507336, 0, 65538, 1507337, 0, 65538, 1507338, 0, 65538, 1507339, 0, 65538, 1507340, 0, 65538, 1507341, 0, 65538, 1507342, 0, 65538, 1507343, 0, 65538, 1507344, 0, 65538, 1507345, 0, 65538, 1507346, 0, 3, 1638387, 0, 1, 1638388, 0, 65538, 1638389, 0, 65538, 1638390, 0, 65538, 1638391, 0, 65538, 1638392, 0, 65538, 1638393, 0, 65538, 1638394, 0, 65538, 1638395, 0, 65538, 1638396, 0, 65538, 1638397, 0, 65538, 1638398, 0, 65538, 1638399, 0, 65538, 1572864, 0, 65538, 1572865, 0, 65538, 1572866, 0, 65538, 1572867, 0, 65538, 1572868, 0, 65538, 1572869, 0, 65538, 1572870, 0, 65538, 1572871, 0, 65538, 1572872, 0, 65538, 1572873, 0, 65538, 1572874, 0, 65538, 1572875, 0, 65538, 1572876, 0, 65538, 1572877, 0, 65538, 1572878, 0, 65538, 1572879, 0, 65538, 1572880, 0, 65538, 1572881, 0, 65538, 1572882, 0, 65538, 1572883, 0, 3, 1703922, 0, 1, 1703923, 0, 65538, 1703924, 0, 65538, 1703925, 0, 65538, 1703926, 0, 65538, 1703927, 0, 65538, 1703928, 0, 65538, 1703929, 0, 65538, 1703930, 0, 65538, 1703931, 0, 65538, 1703932, 0, 65538, 1703933, 0, 65538, 1703934, 0, 65538, 1703935, 0, 65538, 1638400, 0, 65538, 1638401, 0, 65538, 1638402, 0, 65538, 1638403, 0, 65538, 1638404, 0, 65538, 1638405, 0, 65538, 1638406, 0, 65538, 1638407, 0, 65538, 1638408, 0, 65538, 1638409, 0, 65538, 1638410, 0, 65538, 1638411, 0, 65538, 1638412, 0, 65538, 1638413, 0, 65538, 1638414, 0, 65538, 1638415, 0, 65538, 1638416, 0, 65538, 1638417, 0, 65538, 1638418, 0, 65538, 1638419, 0, 65538, 1638420, 0, 3, 1769457, 0, 1, 1769458, 0, 65538, 1769459, 0, 65538, 1769460, 0, 65538, 1769461, 0, 65538, 1769462, 0, 65538, 1769463, 0, 65538, 1769464, 0, 65538, 1769465, 0, 65538, 1769466, 0, 65538, 1769467, 0, 65538, 1769468, 0, 65538, 1769469, 0, 65538, 1769470, 0, 65538, 1769471, 0, 65538, 1703936, 0, 65538, 1703937, 0, 65538, 1703938, 0, 65538, 1703939, 0, 65538, 1703940, 0, 65538, 1703941, 0, 65538, 1703942, 0, 65538, 1703943, 0, 65538, 1703944, 0, 65538, 1703945, 0, 65538, 1703946, 0, 65538, 1703947, 0, 65538, 1703948, 0, 65538, 1703949, 0, 65538, 1703950, 0, 65538, 1703951, 0, 65538, 1703952, 0, 65538, 1703953, 0, 65538, 1703954, 0, 65538, 1703955, 0, 65538, 1703956, 0, 65538, 1703957, 0, 3, 1834992, 0, 1, 1834993, 0, 65538, 1834994, 0, 65538, 1834995, 0, 65538, 1834996, 0, 65538, 1834997, 0, 65538, 1834998, 0, 65538, 1834999, 0, 65538, 1835000, 0, 65538, 1835001, 0, 65538, 1835002, 0, 65538, 1835003, 0, 65538, 1835004, 0, 65538, 1835005, 0, 65538, 1835006, 0, 65538, 1835007, 0, 65538, 1769472, 0, 65538, 1769473, 0, 65538, 1769474, 0, 65538, 1769475, 0, 65538, 1769476, 0, 65538, 1769477, 0, 65538, 1769478, 0, 65538, 1769479, 0, 65538, 1769480, 0, 65538, 1769481, 0, 65538, 1769482, 0, 65538, 1769483, 0, 65538, 1769484, 0, 65538, 1769485, 0, 65538, 1769486, 0, 65538, 1769487, 0, 65538, 1769488, 0, 65538, 1769489, 0, 65538, 1769490, 0, 65538, 1769491, 0, 65538, 1769492, 0, 65538, 1769493, 0, 65538, 1769494, 0, 3, 1900527, 0, 1, 1900528, 0, 65538, 1900529, 0, 65538, 1900530, 0, 65538, 1900531, 0, 65538, 1900532, 0, 65538, 1900533, 0, 65538, 1900534, 0, 65538, 1900535, 0, 65538, 1900536, 0, 65538, 1900537, 0, 65538, 1900538, 0, 65538, 1900539, 0, 65538, 1900540, 0, 65538, 1900541, 0, 65538, 1900542, 0, 65538, 1900543, 0, 65538, 1835008, 0, 65538, 1835009, 0, 65538, 1835010, 0, 65538, 1835011, 0, 65538, 1835012, 0, 65538, 1835013, 0, 65538, 1835014, 0, 65538, 1835015, 0, 65538, 1835016, 0, 65538, 1835017, 0, 65538, 1835018, 0, 65538, 1835019, 0, 65538, 1835020, 0, 65538, 1835021, 0, 65538, 1835022, 0, 65538, 1835023, 0, 65538, 1835024, 0, 65538, 1835025, 0, 65538, 1835026, 0, 65538, 1835027, 0, 65538, 1835028, 0, 65538, 1835029, 0, 65538, 1835030, 0, 65538, 1835031, 0, 3, 1966062, 0, 1, 1966063, 0, 65538, 1966064, 0, 65538, 1966065, 0, 65538, 1966066, 0, 65538, 1966067, 0, 65538, 1966068, 0, 65538, 1966069, 0, 65538, 1966070, 0, 65538, 1966071, 0, 65538, 1966072, 0, 65538, 1966073, 0, 65538, 1966074, 0, 65538, 1966075, 0, 65538, 1966076, 0, 65538, 1966077, 0, 65538, 1966078, 0, 65538, 1966079, 0, 65538, 1900544, 0, 65538, 1900545, 0, 65538, 1900546, 0, 65538, 1900547, 0, 65538, 1900548, 0, 65538, 1900549, 0, 65538, 1900550, 0, 65538, 1900551, 0, 65538, 1900552, 0, 65538, 1900553, 0, 65538, 1900554, 0, 65538, 1900555, 0, 65538, 1900556, 0, 65538, 1900557, 0, 65538, 1900558, 0, 65538, 1900559, 0, 65538, 1900560, 0, 65538, 1900561, 0, 65538, 1900562, 0, 65538, 1900563, 0, 65538, 1900564, 0, 65538, 1900565, 0, 65538, 1900566, 0, 65538, 1900567, 0, 65538, 1900568, 0, 3, 2031597, 0, 1, 2031598, 0, 65538, 2031599, 0, 65538, 2031600, 0, 65538, 2031601, 0, 65538, 2031602, 0, 65538, 2031603, 0, 65538, 2031604, 0, 65538, 2031605, 0, 65538, 2031606, 0, 65538, 2031607, 0, 65538, 2031608, 0, 65538, 2031609, 0, 65538, 2031610, 0, 65538, 2031611, 0, 65538, 2031612, 0, 65538, 2031613, 0, 65538, 2031614, 0, 65538, 2031615, 0, 65538, 1966080, 0, 65538, 1966081, 0, 65538, 1966082, 0, 65538, 1966083, 0, 65538, 1966084, 0, 65538, 1966085, 0, 65538, 1966086, 0, 65538, 1966087, 0, 65538, 1966088, 0, 65538, 1966089, 0, 65538, 1966090, 0, 65538, 1966091, 0, 65538, 1966092, 0, 65538, 1966093, 0, 65538, 1966094, 0, 65538, 1966095, 0, 65538, 1966096, 0, 65538, 1966097, 0, 65538, 1966098, 0, 65538, 1966099, 0, 65538, 1966100, 0, 65538, 1966101, 0, 65538, 1966102, 0, 65538, 1966103, 0, 65538, 1966104, 0, 65538, 1966105, 0, 3 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 57, 591 )
+scale = Vector2( 5, 5 )
+z_index = 2
+collision_mask = 14
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+zoom = Vector2( 0.7, 0.7 )
+smoothing_enabled = true
+smoothing_speed = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D"]
+layer = 6
+
+[node name="ColorRect" type="ColorRect" parent="player/Camera2D/CanvasLayer"]
+material = ExtResource( 13 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 640, 360 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.0941176, 0.596078, 0.964706, 1 )
+position = Vector2( 90, 1006 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.0941176, 0.596078, 0.964706, 1 )
+position = Vector2( -201, 995 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color( 0.0470588, 0.529412, 0.678431, 1 )
+position = Vector2( -216, 1059 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color( 0.0470588, 0.529412, 0.678431, 1 )
+position = Vector2( 475, 1070 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color( 0.0470588, 0.529412, 0.678431, 1 )
+position = Vector2( -216, 1059 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color( 0.0470588, 0.529412, 0.678431, 1 )
+position = Vector2( 222, 1089 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 1440, 0 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color( 0.0941176, 0.760784, 0.964706, 1 )
+position = Vector2( 109, 1070 )
+texture = ExtResource( 5 )
+
+[node name="door" parent="." instance=ExtResource( 6 )]
+position = Vector2( -164, 571 )
+target_scene = ExtResource( 12 )
+
+[node name="Particles2D" type="Particles2D" parent="door"]
+material = SubResource( 11 )
+position = Vector2( 1.00002, 0 )
+scale = Vector2( 5, 5 )
+amount = 10
+preprocess = 5.0
+explosiveness = 0.22
+randomness = 0.58
+fixed_fps = 50
+process_material = SubResource( 8 )
+texture = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="door"]
+follow_viewport_enable = true
+
+[node name="ColorRect" type="ColorRect" parent="door/CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.364706 )
+material = SubResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -253.0
+margin_top = 442.0
+margin_right = -1344.0
+margin_bottom = -39.0
+
+[node name="Baba budan" type="Area2D" parent="."]
+position = Vector2( 167, 595 )
+scale = Vector2( 5, 5 )
+z_index = 1
+collision_layer = 8
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Baba budan"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Baba budan"]
+shape = SubResource( 2 )
+
+[node name="quest" type="Label" parent="Baba budan"]
+margin_left = -3.40002
+margin_top = -22.8
+margin_right = 4.59998
+margin_bottom = -7.8
+rect_pivot_offset = Vector2( 4, 7.8 )
+custom_fonts/font = SubResource( 6 )
+text = "?"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Baba budan"]
+autoplay = "Idle"
+anims/Activated = SubResource( 5 )
+anims/Idle = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+anims/protal = SubResource( 9 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -2.667
+autoplay = true
+
+[node name="Pause menu" parent="." instance=ExtResource( 14 )]
+visible = false

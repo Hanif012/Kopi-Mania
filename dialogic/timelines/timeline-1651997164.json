@@ -1,0 +1,243 @@
+{
+	"events": [
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 1,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "instant_in.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1,
+			"waiting_skippable": true
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Halo, tuan\nSaya Gary\nApakah anda tahu dimana aku berada?\nTiba-tiba setelah saya membuka pintu kafe saya\nSaya tersedot kesini"
+		},
+		{
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Anda berada di jazirah arab\nAku tidak tahu apa yang terjadi denganmu"
+		},
+		{
+			"animation": "headshake.gd",
+			"animation_length": 1,
+			"animation_wait": false,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "(Don't change)",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Arab? \nJauh sekali aku dari rumah asalku"
+		},
+		{
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tadi kau bilang kopi?\nSaya suka kopi\nPerkenalkan saya Baba Budan, seorang sufi asal India\nBagaimana dengan kekuatanku aku kembalikan kamu ketempat asalmu? \nTapi...\nAda syaratnya\nKamu harus mencari  biji kopi yang aku tak sengaja jatuhkan entah dimana"
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Uhhhhhhhhhhhhh\nAku berkata  kafe \nBukan kopi"
+		},
+		{
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh \nMaaf\nJadi bagaimana tawaranku?"
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Hmm, apakah aku harus membantu dia? "
+		},
+		{
+			"choice": "Iya",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Baiklah \nakan kulakukan"
+		},
+		{
+			"choice": "Tidak",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maaf \nAku tidak tertarik"
+		},
+		{
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Baiklah, tidak apa-apa\nSemoga beruntung kembali ke tempat asalmu!"
+		},
+		{
+			"animation": "back_out_right.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tunggu, akan kulakukan"
+		},
+		{
+			"animation": "back_in_left.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tadi malam terjadi angin kencang\nKantong biji kopiku pasti ada di sekitar padang rumput  dan gurun ini\nCarilah!\nAkan kutunggu di pelabuhan"
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Baiklah"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		},
+		{
+			"animation": "5-fade_out_down.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "[All]",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1651997164.json",
+		"name": "Baba Budan bertemu"
+	}
+}

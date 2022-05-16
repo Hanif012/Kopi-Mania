@@ -1,0 +1,139 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": false,
+			"wait_seconds": 2,
+			"waiting_skippable": false
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1,
+			"waiting_skippable": true
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tekan [rainbow freq=1 sat=10 val=20][b]Enter[/b][/rainbow] untuk [i]berinteraksi[/i]\nTekan [rainbow freq=1 sat=10 val=20][b]Up[/b][/rainbow] untuk [i]lompat[/i]\nTekan [rainbow freq=1 sat=10 val=20][b]Left[/b][/rainbow] untuk [i]berjalan ke kiri[/i]\nTekan [rainbow freq=1 sat=10 val=20][b]Right[/b][/rainbow] untuk [i]berjalan ke kanan[/i]\nTekan [rainbow freq=1 sat=10 val=20][b]Escape[/b][/rainbow] untuk [i]Pause game[/i]"
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Paham?"
+		},
+		{
+			"choice": "Saya paham",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Tidak, tapi akan saya cari tahu caranya",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"animation": "jello.gd",
+			"animation_length": 0.5,
+			"animation_repeat": 2,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "(Don't change)",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "WKWKWKWK"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": false,
+			"wait_seconds": 1
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Bagus\nKamu bisa mencobanya sekarang!\n:)"
+		},
+		{
+			"animation": "back_out_left.gd",
+			"animation_length": 1,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.5
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1651906947.json",
+		"name": "Tutorial"
+	}
+}

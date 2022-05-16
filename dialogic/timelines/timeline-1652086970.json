@@ -1,0 +1,126 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ini sudah kudapatkan kopimu\nTapi kenapa kopi mentah yang kamu bawa?"
+		},
+		{
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " [nw=2][speed=0.3]Aku ingin membawa kopi arabika ini ke negeriku\n [nw=1]Aku akan tanam ini di lereng Chandragiri, Chikkamagaluru\n [nw=1]Orang arab menjaga ketat rahasia minuman berharga ini\n [nw=1]Mereka tidak akan menjual biji kopi mentah ini dengan harga setinggi langit sekalipun"
+		},
+		{
+			"animation": "headshake.gd",
+			"animation_length": 0.5,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "(Don't change)",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "character-1651905742.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[nw=0.5]HAHAHA \n[nw=1]Ini...\n [nw=1]Bukan tentang uang\n [nw=1]Ini...\n Tentang kopi yang dijaga bagaikan permaisuri \nDan akan kubagikan  manfaat dan kenikmatan yang dihasilkannya ke seluruh dunia\n [nw=0.5]HAHAHA\n Lagi pula portal aneh yang membawamu kesini sudah berada di kirimu\nSampai jumpa Gary"
+		},
+		{
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Selamat Tinggal Baba Budan"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"animation": "bounce_out.gd",
+			"animation_length": 0.5,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1651905289.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.2 - Dev",
+		"file": "timeline-1652086970.json",
+		"name": "Misi selesai"
+	}
+}

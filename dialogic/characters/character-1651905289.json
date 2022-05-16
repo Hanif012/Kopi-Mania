@@ -1,0 +1,21 @@
+{
+	"color": "#ff9a704d",
+	"description": "Main guy",
+	"display_name": "",
+	"display_name_bool": true,
+	"id": "character-1651905289.json",
+	"mirror_portraits": false,
+	"name": "Gary",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": -10,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://assets/Character/Character.PNG"
+		}
+	],
+	"scale": 2000,
+	"theme": "default-theme.cfg"
+}
