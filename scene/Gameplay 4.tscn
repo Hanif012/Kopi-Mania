@@ -8,8 +8,9 @@
 [ext_resource path="res://assets/sounds/chat.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/test theme.tres" type="Theme" id=7]
 [ext_resource path="res://assets/Fonts/alagard.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://tv mode2.tres" type="Material" id=9]
+[ext_resource path="res://shaders/tv mode2.tres" type="Material" id=9]
 [ext_resource path="res://scene/Pause menu.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 8 )

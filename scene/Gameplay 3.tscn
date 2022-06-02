@@ -12,8 +12,9 @@
 [ext_resource path="res://scripts/cloud.gd" type="Script" id=10]
 [ext_resource path="res://assets/Random idk/asap.png" type="Texture" id=11]
 [ext_resource path="res://scene/Gameplay 4.tscn" type="PackedScene" id=12]
-[ext_resource path="res://tv mode.tres" type="Material" id=13]
+[ext_resource path="res://shaders/tv mode.tres" type="Material" id=13]
 [ext_resource path="res://scene/Pause menu.tscn" type="PackedScene" id=14]
+
 
 [sub_resource type="Shader" id=1]
 code = "shader_type spatial;

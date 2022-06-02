@@ -15,7 +15,7 @@
 [ext_resource path="res://assets/Random idk/biji kopi.png" type="Texture" id=13]
 [ext_resource path="res://scripts/Credits.gd" type="Script" id=14]
 [ext_resource path="res://assets/sounds/menu.mp3" type="AudioStream" id=15]
-[ext_resource path="res://tv mode2.tres" type="Material" id=16]
+[ext_resource path="res://shaders/tv mode2.tres" type="Material" id=16]
 [ext_resource path="res://assets/skkni 1.jpeg" type="Texture" id=17]
 [ext_resource path="res://assets/kemnaker 1.jpeg" type="Texture" id=18]
 

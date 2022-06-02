@@ -78,3 +78,11 @@ func add_kopi():
 
 func _on_Unta_body_entered(body):
 	motion.y = spring
+
+#func _on_Unta_berjalan_body_entered():
+#	motion.y = spring
+#	print("jump")
+
+func _on_Unta_berjalan_unta_jalan_entered():
+	motion.y = spring
+	print("jump")
